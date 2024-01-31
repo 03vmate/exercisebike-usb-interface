@@ -1000,6 +1000,13 @@
     (uuid f9aa1d2d-1fe0-4fc3-932a-7262a27baebb)
   )
 
+  (global_label "D-" (shape input) (at 147.32 63.5 270) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 010d2a41-c03a-49d7-a3c7-b3dc649fd0f4)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 147.32 69.2482 90)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
   (global_label "SW_IN" (shape input) (at 146.05 88.9 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 0250adc9-c020-4f57-84d0-2376d7d7a2db)
@@ -1495,6 +1502,31 @@
     )
   )
 
+  (symbol (lib_id "power:+3V3") (at 147.32 55.88 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 789e96b5-afed-40a8-8423-65cf1f31127f)
+    (property "Reference" "#PWR017" (at 147.32 59.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3" (at 147.32 50.8 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 147.32 55.88 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 147.32 55.88 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 55a11f6c-44be-4a23-9a25-9208d04fbbe1))
+    (instances
+      (project "exbike-usb-hw"
+        (path "/bf0de29e-bdfb-4ae7-a755-5db6919b52b8"
+          (reference "#PWR017") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 201.93 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7a6ec236-22ab-44d2-b009-e41db0b1ce14)
@@ -1646,6 +1678,32 @@
       (project "exbike-usb-hw"
         (path "/bf0de29e-bdfb-4ae7-a755-5db6919b52b8"
           (reference "#PWR014") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 147.32 59.69 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid a3395387-7273-4aff-bb91-8c069d7742fd)
+    (property "Reference" "R4" (at 151.13 60.96 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1.5k" (at 151.13 58.42 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 149.098 59.69 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 147.32 59.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 50e01161-6635-46ad-83da-8fa1cd409b38))
+    (pin "2" (uuid 7b947482-3066-4155-968d-9680ed121164))
+    (instances
+      (project "exbike-usb-hw"
+        (path "/bf0de29e-bdfb-4ae7-a755-5db6919b52b8"
+          (reference "R4") (unit 1)
         )
       )
     )
