@@ -215,54 +215,14 @@ section at the end of this file).
 
 /* -------------------------- Device Description --------------------------- */
 
-#define  USB_CFG_VENDOR_ID       0xc0, 0x16 /* = 0x16c0 = 5824 = voti.nl */
-/* USB vendor ID for the device, low byte first. If you have registered your
- * own Vendor ID, define it here. Otherwise you may use one of obdev's free
- * shared VID/PID pairs. Be sure to read USB-IDs-for-free.txt for rules!
- * *** IMPORTANT NOTE ***
- * This template uses obdev's shared VID/PID pair for Vendor Class devices
- * with libusb: 0x16c0/0x5dc.  Use this VID/PID pair ONLY if you understand
- * the implications!
- */
-#define  USB_CFG_DEVICE_ID       0xe8, 0x03 /* VOTI's lab use PID */
-/* This is the ID of the product, low byte first. It is interpreted in the
- * scope of the vendor ID. If you have registered your own VID with usb.org
- * or if you have licensed a PID from somebody else, define it here. Otherwise
- * you may use one of obdev's free shared VID/PID pairs. See the file
- * USB-IDs-for-free.txt for details!
- * *** IMPORTANT NOTE ***
- * This template uses obdev's shared VID/PID pair for Vendor Class devices
- * with libusb: 0x16c0/0x5dc.  Use this VID/PID pair ONLY if you understand
- * the implications!
- */
+#define  USB_CFG_VENDOR_ID       0xc0, 0x16
+#define  USB_CFG_DEVICE_ID       0xda, 0x05
 #define USB_CFG_DEVICE_VERSION  0x00, 0x01
-/* Version number of the device: Minor number first, then major number.
- */
-#define USB_CFG_VENDOR_NAME     'o', 'b', 'd', 'e', 'v', '.', 'a', 't'
-#define USB_CFG_VENDOR_NAME_LEN 8
-/* These two values define the vendor name returned by the USB device. The name
- * must be given as a list of characters under single quotes. The characters
- * are interpreted as Unicode (UTF-16) entities.
- * If you don't want a vendor name string, undefine these macros.
- * ALWAYS define a vendor name containing your Internet domain name if you use
- * obdev's free shared VID/PID pair. See the file USB-IDs-for-free.txt for
- * details.
- */
-#define USB_CFG_DEVICE_NAME     'M', 'o', 'u', 's', 'e'
-#define USB_CFG_DEVICE_NAME_LEN 5
-/* Same as above for the device name. If you don't want a device name, undefine
- * the macros. See the file USB-IDs-for-free.txt before you assign a name if
- * you use a shared VID/PID.
- */
-/*#define USB_CFG_SERIAL_NUMBER   'N', 'o', 'n', 'e' */
-/*#define USB_CFG_SERIAL_NUMBER_LEN   0 */
-/* Same as above for the serial number. If you don't want a serial number,
- * undefine the macros.
- * It may be useful to provide the serial number through other means than at
- * compile time. See the section about descriptor properties below for how
- * to fine tune control over USB descriptors such as the string descriptor
- * for the serial number.
- */
+#define USB_CFG_VENDOR_NAME     '0','3','v','m','a','t','e'
+#define USB_CFG_VENDOR_NAME_LEN 7
+#define USB_CFG_DEVICE_NAME     'E', 'x', 'b', 'i', 'k','e','h','w'
+#define USB_CFG_DEVICE_NAME_LEN 8
+
 #define USB_CFG_DEVICE_CLASS        0
 #define USB_CFG_DEVICE_SUBCLASS     0
 /* See USB specification if you want to conform to an existing device class.
@@ -276,7 +236,7 @@ section at the end of this file).
  * HID class is 3, no subclass and protocol required (but may be useful!)
  * CDC class is 2, use subclass 2 and protocol 1 for ACM
  */
-#define USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH    52
+#define USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH    26
 /* Define this to the length of the HID report descriptor, if you implement
  * an HID device. Otherwise don't define it or define it to 0.
  * If you use this define, you must add a PROGMEM character array named

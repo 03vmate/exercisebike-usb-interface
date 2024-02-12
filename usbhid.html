@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <button id="connectButton">Connect to HID Device</button>
+  <script>
+    async function connectToDevice() {
+      try {
+        // Open device picker dialog
+        const devices = await navigator.hid.requestDevice({
+          filters: [{ vendorId: 0x16C0, productId: 0x05DA }]
+        });
+        
+        if (devices.length === 0) {
+          console.error('No HID devices found.');
+          return;
+        }
+        await devices[0].open();
+
+        // Listen for input reports
+        devices[0].addEventListener('inputreport', event => {
+            //Get received bytes (there should only be one)
+            const data = new Uint8Array(event.data.buffer);
+            if(data[0] == 45) { // magic number used to indicate input event
+                console.log("please just end my suffering");
+            }
+        });
+
+        console.log('HID device connected:', devices[0].productName);
+
+      } catch (error) {
+        console.error('Error connecting to HID device:', error);
+      }
+    }
+    document.getElementById('connectButton').addEventListener('click', connectToDevice);
+  </script>
+</body>
+</html>
